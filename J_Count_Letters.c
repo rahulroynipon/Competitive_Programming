@@ -1,21 +1,39 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 int main(){
+    char ch;
+    int arr[26] = {0};
 
-    char str[1000001]; 
-    //It works and i get proper output when i use less than 10^6
-    //But in question it needed 10^7 length string
-    int arr[26]= {0};
-
-    scanf("%s",str);
-
-    for (int i=0; str[i]!='\0';i++){
-        arr[str[i]-'a']+=1;
+    while ((ch = getchar()) != EOF)
+    {
+        arr[ch-'a'] += 1;
     }
-    
-    for (int i=0;i<26;i++){
-        if(arr[i]) printf("%c : %d\n",(i+'a'), arr[i]);
+
+    for (int i = 0; i < 26; i++) {
+        if (arr[i]) printf("%c : %d\n", (i + 'a'), arr[i]);
     }
     
     return 0;
-}
+} 
+
+
+
+// int length = 10000001; 
+// char *str = (char *)malloc(length * sizeof(char));
+
+// if (str == NULL) {
+//     return 1;
+// }
+
+// int arr[26] = {0};
+// scanf("%s", str);
+
+// for (int i = 0; str[i] != '\0'; i++) {
+//     arr[str[i] - 'a'] += 1;
+// }
+
+// for (int i = 0; i < 26; i++) {
+//     if (arr[i]) printf("%c : %d\n", (i + 'a'), arr[i]);
+// }
+    
