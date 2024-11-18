@@ -1,6 +1,7 @@
 .cph
+.vscode
 output
 input.txt
 output.txt
-class1.c
 text.txt
+A_AA_Test.cpp
