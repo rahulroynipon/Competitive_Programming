@@ -1,17 +1,28 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+int fun(int x){
+    return x > 0 ? 1: x<0 ? 2 : 0;
+}
+
 int main(){
+
     int n;
+
     cin>>n;
-    
-    int arr[n];
-    for (int i=n-1; i>=0; i--){
-        cin>>arr[i];
+
+    vector<int> v(n);
+    for (int i=0; i<n; i++){
+        cin>>v[i];
     }
 
-    for (int i=0; i<n; i++){
-        cout<<arr[i]<<" ";
+    transform(v.begin(), v.end(), v.begin(), fun);
+
+    for (int i: v){
+        cout<<i<<" ";
     }
+
+    cout<<endl;
+
     return 0;
 }
